@@ -4,7 +4,13 @@ const server = http.createServer((req,res)=>{
     const url=req.url;
     const method =req.method;
     if(url==='/'){
-        const message = fs.readFileSync('F:/SharpenerProjects/BackendQuestions/message app/message.txt','utf8');
+        let message;
+        if(fs.existsSync('F:/SharpenerProjects/BackendQuestions/message app/message.txt')){
+            message = fs.readFileSync('F:/SharpenerProjects/BackendQuestions/message app/message.txt','utf8');
+        }
+        else{
+            message="";
+        }
         res.write('<html>');
         res.write('<head><title>Message App</title></head>');
         res.write('<body>');
