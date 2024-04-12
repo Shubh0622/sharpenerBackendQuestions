@@ -32,12 +32,6 @@ const requestHandler = ((req,res)=>{
         res.writeHead(302,  {Location: "/"});
         return res.end();
     }
-    // res.setHeader('Content-Type','text/html');
-    // res.write('<html>');
-    // res.write('<head><title>First App</title></head>');
-    // res.write('<body><h1>Welcome home</h1></body>');
-    // res.write('</html>');
-    // res.end();
-})
+});
 
 module.exports = requestHandler;
